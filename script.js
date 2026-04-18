@@ -6,7 +6,7 @@
 const CONFIG = {
     // Để trống hoặc dùng '/' nếu chạy local cùng server.js
     // Sau khi deploy lên Render, hãy thay bằng URL của Render (ví dụ: https://your-app.onrender.com)
-    BACKEND_URL: '' 
+    BACKEND_URL: 'https://3d-interior-ai-backend.onrender.com' 
 };
 
 document.addEventListener('DOMContentLoaded', () => {
