@@ -2,6 +2,13 @@
  * script.js - Xử lý logic AI Render (Tích hợp)
  */
 
+// Cấu hình URL Backend - Thay đổi URL này sau khi deploy lên Render/Railway
+const CONFIG = {
+    // Để trống hoặc dùng '/' nếu chạy local cùng server.js
+    // Sau khi deploy lên Render, hãy thay bằng URL của Render (ví dụ: https://your-app.onrender.com)
+    BACKEND_URL: '' 
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // Các phần tử UI
     const btnOpenModal = document.getElementById('btn-ai-render');
@@ -77,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('image', selectedFile);
 
                 // Gọi tới endpoint server.js
-                const response = await fetch('/upload', {
+                const uploadUrl = CONFIG.BACKEND_URL ? `${CONFIG.BACKEND_URL}/upload` : '/upload';
+                const response = await fetch(uploadUrl, {
                     method: 'POST',
                     body: formData
                 });

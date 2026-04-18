@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+app.use(cors()); // Cho phép gọi từ GitHub Pages
+app.use(express.static(__dirname));
+app.use(express.json());
 
 // Cấu hình Multer để lưu trữ file trong bộ nhớ (memoryStorage)
 const storage = multer.memoryStorage();
@@ -10,9 +15,6 @@ const upload = multer({
     storage: storage,
     limits: { fileSize: 10 * 1024 * 1024 } 
 });
-
-app.use(express.static(__dirname));
-app.use(express.json());
 
 /**
  * Hàm gửi yêu cầu tới Pollinations AI để lấy ảnh render thực tế
