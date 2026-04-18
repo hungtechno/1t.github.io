@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<script type="text/javascript" src="./b4w.simple.min.js?v=26122024205707"></script>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+<link type="text/css" rel="stylesheet" href="index.min.css?v=26122024205707">
+<!-- Tích hợp CSS AI Render -->
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  background: #555;
+}
+
+.content {
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+  height:95vh;
+}
+</style></head><body>
+
+<div class="content">
+    <body style="margin:auto;padding:0px;overflow:hidden;">
+        <iframe src="./bosuutap1.html" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:90%;width:100%;" scrolling="no" allowfullscreen></iframe>
+    </body>
+</div>
+
+<!-- Nút AI Render - Floating Action Button -->
+<button class="btn-ai-floating" id="btn-ai-render">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path><path d="M12 12L2.69 7"></path><path d="M12 12l5.63 8.35"></path></svg>
+    AI Render
+</button>
+
+<!-- Modal AI Render (Tích hợp) -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Cấu hình AI Interior Render</h2>
+            <button class="btn-close" id="btn-close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="instruction-box">
+                <strong>Hướng dẫn:</strong> Chụp màn hình góc nhìn 3D hiện tại (Win+Shift+S), sau đó tải ảnh lên để AI xử lý làm đẹp.
+            </div>
+            <div class="upload-section">
+                <label>Ảnh chụp màn hình:</label>
+                <input type="file" id="file-upload" accept="image/*">
+            </div>
+            <div class="comparison-container">
+                <div class="image-card">
+                    <span class="label">ẢNH GỐC</span>
+                    <img id="preview-original" src="https://via.placeholder.com/600x400?text=Chua+co+anh">
+                </div>
+                <div class="image-card">
+                    <span class="label">KẾT QUẢ AI</span>
+                    <div class="loader-overlay" id="loader">
+                        <div class="spinner"></div>
+                        <p id="status-text" style="color: #2563eb; font-size: 13px; font-weight: 600;"></p>
+                    </div>
+                    <img id="preview-result" src="https://via.placeholder.com/600x400?text=Ket+qua">
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn-download" id="btn-download-ai" style="display: none;">Tải ảnh về máy</button>
+                <button class="btn-send" id="btn-send-ai" disabled>Gửi AI Xử lý</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trigger/Open The Modal (Giữ nguyên cấu trúc cũ) -->
+<div class="hienvideochung" id="hienvideochung"></div>
+<!-- The Modal (Cũ) -->
+<div id="myModal" class="modal1">
+    <div class="modal1-content">
+        <span id="noidung1" class="close1" style="text-align: center;">TẮT-HDSD</span>
+        <p id="noidung2" style="text-align: center;">HƯỚNG DẪN SỬ DỤNG</p>
+        <div id="player"></div>
+        <div>
+            <iframe id="clipmodal" src="https://3dshow.online/hdsd/"  style="height:65vh;width:81vw;position: absolute;margin: 0 auto;display: block;" ></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript" src="index.min.js?v=26122024205707"></script>
+<!-- Tích hợp Script AI Render -->
+<script src="script.js"></script>
+
+</body></html>
